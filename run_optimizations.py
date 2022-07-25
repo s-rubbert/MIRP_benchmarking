@@ -1,5 +1,6 @@
 import dimod
 import numpy as np
+import pickle
 from dwave.system import LeapHybridCQMSampler
 
 def open_mps(file):
@@ -45,8 +46,7 @@ def read_variables(columns_section, bounds_section):
             else:
                 return dimod.Integer(name, lower_bound=lower, upper_bound=upper)
         else:
-                return dimod.Real(name, lower_bound=lower, upper_bound=upper)
-        
+            return dimod.Real(name, lower_bound=lower, upper_bound=upper)
     
     variables = {}
     int_marker = False
@@ -119,7 +119,7 @@ def build_model(rows_lhs, rows_rel):
     objective = objective[0]
     
     model = dimod.CQM()
-    model.set_objective(rows_lhs[objective])
+    model.set_objective(-rows_lhs[objective])
     for row, qm in rows_lhs.items():
         if not row == objective and type(qm) is not int:
             if rows_rel[row] == 'L':
@@ -140,16 +140,13 @@ def mps_to_cqm(path):
     model = build_model(rows_lhs, rows_rel)
     return model
 
-print('hello')
-
-file = 'LR1_1_DR1_3_VC1_V7a_t45.mps'
+file = 'test_instance.mps'
 model = mps_to_cqm('MIRPs/' + file)
 
-print(len(model.constraints))
+sampler = LeapHybridCQMSampler()
+sample_set = sampler.sample_cqm(model, time_limit=5)
 
-#sampler = LeapHybridCQMSampler()
-#sample_set = sampler.sample_cqm(self.cluster_objective)
-#sample_set = sample_set.to_serializable()
+sample_set = sample_set.to_serializable()
 
-#with open('Results/' + file, 'wb') as f:
-            #pickle.dump(sample_set, f)
+with open(f"Results/{file.split('.')[0]}.txt" , 'wb') as f:
+    pickle.dump(sample_set, f)
