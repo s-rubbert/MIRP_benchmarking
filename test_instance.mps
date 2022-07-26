@@ -1,8 +1,8 @@
 NAME MIPmodel
 ROWS
  N  COST
- E  LIM1
- E  LIM2
+ L  LIM1
+ G  LIM2
  E  MYEQN
 COLUMNS
     XONE  COST       1
