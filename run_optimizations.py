@@ -144,9 +144,9 @@ file = 'test_instance.mps'
 model = mps_to_cqm('MIRPs/' + file)
 
 sampler = LeapHybridCQMSampler()
-sample_set = sampler.sample_cqm(model, time_limit=5)
+# sample_set = sampler.sample_cqm(model, time_limit=5)
 
 sample_set = sample_set.to_serializable()
 
-with open(f"Results/{file.split('.')[0]}.txt" , 'wb') as f:
+with open(f"Results/{file.split('.')[0]}" , 'wb') as f:
     pickle.dump(sample_set, f)
