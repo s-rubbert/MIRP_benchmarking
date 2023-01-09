@@ -23,7 +23,7 @@ print('removed trivial constraints')
 print(f'remaining constraints: {len(model.constraints)}')
 
 sampler = LeapHybridCQMSampler()
-sample_set = sampler.sample_cqm(model, time_limit=3600)
+sample_set = sampler.sample_cqm(model, time_limit=5)
 
 print('calculation done')
 

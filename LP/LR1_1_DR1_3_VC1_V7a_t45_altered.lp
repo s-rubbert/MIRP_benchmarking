@@ -8334,16 +8334,16 @@ Subject To
    - f_(3,43),5 - f_(3,43),6 + supplyAtNode_(3,44) = -26
  invBalancePort_(0,44): - supplyAtNode_(0,44) + alphaSlack_(0,44)
    + f_(0,44),0 + f_(0,44),1 + f_(0,44),2 + f_(0,44),3 + f_(0,44),4
-   + f_(0,44),5 + f_(0,44),6 + endingSupplyAtPort_0 = 99
+   + f_(0,44),5 + f_(0,44),6 + andingSupplyAtPort_0 = 99
  invBalancePort_(1,44): - supplyAtNode_(1,44) - alphaSlack_(1,44)
    - f_(1,44),0 - f_(1,44),1 - f_(1,44),2 - f_(1,44),3 - f_(1,44),4
-   - f_(1,44),5 - f_(1,44),6 + endingSupplyAtPort_1 = -39
+   - f_(1,44),5 - f_(1,44),6 + andingSupplyAtPort_1 = -39
  invBalancePort_(2,44): - supplyAtNode_(2,44) - alphaSlack_(2,44)
    - f_(2,44),0 - f_(2,44),1 - f_(2,44),2 - f_(2,44),3 - f_(2,44),4
-   - f_(2,44),5 - f_(2,44),6 + endingSupplyAtPort_2 = -34
+   - f_(2,44),5 - f_(2,44),6 + andingSupplyAtPort_2 = -34
  invBalancePort_(3,44): - supplyAtNode_(3,44) - alphaSlack_(3,44)
    - f_(3,44),0 - f_(3,44),1 - f_(3,44),2 - f_(3,44),3 - f_(3,44),4
-   - f_(3,44),5 - f_(3,44),6 + endingSupplyAtPort_3 = -26
+   - f_(3,44),5 - f_(3,44),6 + andingSupplyAtPort_3 = -26
  zOnlyIfSumx_(0,0),0: z_(0,0),0 <= 0
  fjmax_(0,0),0: f_(0,0),0 - 300 z_(0,0),0 <= 0
  fjmin_(0,0),0: f_(0,0),0 - 35 z_(0,0),0 >= -0
@@ -19975,10 +19975,10 @@ Bounds
  x_(auxx),(2,4),6 = 1
  x_(auxx),(0,7),1 = 1
  x_(auxx),(3,6),0 = 1
- endingSupplyAtPort_0 <= 594
- endingSupplyAtPort_1 <= 351
- endingSupplyAtPort_2 <= 510
- endingSupplyAtPort_3 <= 312
+ andingSupplyAtPort_0 <= 594
+ andingSupplyAtPort_1 <= 351
+ andingSupplyAtPort_2 <= 510
+ andingSupplyAtPort_3 <= 312
 Binaries
  z_0,0 z_(0,0),0 z_(0,0),1 z_(0,0),2 z_(0,0),3 z_(0,0),4 z_(0,0),5
  z_(0,0),6 z_(1,0),0 z_(1,0),1 z_(1,0),2 z_(1,0),3 z_(1,0),4 z_(1,0),5
