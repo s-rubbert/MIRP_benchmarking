@@ -9,19 +9,20 @@ import dwave_token
 
 client = Client(token=dwave_token.value)
 
-
-file = 'LR1_1_DR1_3_VC1_V7a_t45.lp'
+file = 'lp_benchmark/t_6_v_1_p_2.lp'
+time_limit = 5
 #file = 'test.lp'
 
-model = dimod.lp.load('LP/' + file)
+model = dimod.lp.load(file)
 print('loading done')
 
-# The following variables are giving trouble if kept as variables. Luckily they are indeed fixed anyway (see LP file)
-auxx_variables = [name for name in model.variables if '(auxx)' in name]
-for name in auxx_variables:
-    model.fix_variable(name, 1)
-model.fix_variable('z_0_0', 0)
+# # The following variables are giving trouble if kept as variables. Luckily they are indeed fixed anyway (see LP file)
+# auxx_variables = [name for name in model.variables if '(auxx)' in name]
+# for name in auxx_variables:
+#     model.fix_variable(name, 1)
+# model.fix_variable('z_0_0', 0)
 
+print(f'constraints: {len(model.constraints)}')
 trivial_constraints = [label for label, constraint in model.constraints.items() if len(constraint.lhs.variables) == 0]
 for label in trivial_constraints:
     model.remove_constraint(label)
@@ -29,13 +30,13 @@ print('removed trivial constraints')
 print(f'remaining constraints: {len(model.constraints)}')
 
 sampler = client.get_solver(name='hybrid_constrained_quadratic_model_version1p')
-sample_set = sampler.sample_cqm(model, time_limit=18000)
+sample_set = sampler.sample_cqm(model, time_limit=time_limit)
 sample_set = sample_set.sampleset
 
 sample_set = sample_set.to_serializable()
 print('calculation done')
 
-with open(f"Results/{file.split('.')[0]}" , 'wb') as f:
+with open(f"{file.split('.')[0]}+_solution_{time_limit}_s" , 'wb') as f:
     pickle.dump(sample_set, f)
 
 print('all done')
