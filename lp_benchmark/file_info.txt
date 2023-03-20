@@ -1,0 +1,140 @@
+The number of periods, vessels and ports can be read off from the title of the files. If we take less than the maximum number of 7 vessels and 4 ports, we deploy the first ones, i.e. we always have at least vessel 1 and port 0. 
+The following are the parameters which never change:
+
+vessel_cap = 300
+vessel_starting_inventory = {1: 300, 2: 0, 3: 0, 4: 0, 5: 0, 6: 300, 7: 300}
+vessel_starting_node = {1: (0, 2), 2: (0, 7), 3: (0, 1), 4: (0, 5), 5: (3, 6), 6: (1, 1), 7: (2, 4)}
+Production Port 0: {'capacity': [594],
+        		  'inventory': [297],
+        		  'rate': [99],
+        		  'price': [0],
+       		  'berth_limit': [1],
+        		  'port_fee': [38],
+       		  'max_amt': [300],
+        		  'min_amt': [35],
+        		  'c2r_ratio': [6]}
+
+
+Consumer Ports 1,2,3: {'capacity': [351, 510, 312],
+        		     'inventory': [168, 255, 156],   
+        		     'rate': [39, 34, 26],
+        		     'price': [5, 5, 5],
+        		     'berth_limit': [1, 1, 1],
+        		     'port_fee': [57, 58, 66],
+        		     'max_amt': [300, 300, 259],
+        		     'min_amt': [50, 35, 20],
+        		     'c2r_ratio': [9, 15, 12]}
+
+distances = [[0, 5792.83,  5730.94,  5663.71], [5792.83, 0, 326.10, 338.92], [5730.94, 326.10, 0, 67.42], [5663.71, 338.92, 67.42, 0]]
+
+travel_cost_per_km = 0.085
+
+The following are the remaining parameters we may change and include in this file:
+
+The travel times will always be of the form
+travel_times = [[0, tt, tt, tt], [tt, 0, 1, 1], [tt, 1, 0, 1], [tt, 1, 1, 0]],
+but we adapt tt to the number of periods for the vessels to have enough time to travel. The standard for this is tt = 9, which is to be assumed if no info about tt is given here
+
+minimum production/consumption rate: dmin
+This may be set to 0 or another number below the maximum production/consumption rate dmax. If a ports maximum production rate is lower than dmin, their minimum production rate will be automatically set to their maximum production rate. If we don't include information about dmin in this file, it is assumed that be dmin = dmax for all ports.
+
+LP Files:
+
+t_6_v_1_p_2:
+tt = 1
+objective = 6.0782835000e+02
+Computation Time : 0.7s (0.03s in Terminal)
+
+t_10_v_1_p_2:
+tt = 2
+dmin = 30
+objective =  1.3878283500e+03
+Computation Time: 0.84s (0.03s in Terminal)
+
+t_10_v_2_p_2:
+tt = 2
+dmin = 50
+objective = 1.3878283500e+03
+Computation Time: 0.87s (0.02s in Terminal)
+
+t_12_v_2_p_3:        
+tt = 3
+dmin = 39
+objective = 2.4907827500e+03
+Computation Time: 0.84s (0.05s in Terminal)
+1.
+
+t_12_v_3_p_3:
+tt = 3
+dmin = 99
+objective = 3.5538292000e+03
+Computation Time: 1.97s (1.25s in Terminal)
+2.
+
+t_12_v_3_p_4:
+tt = 3
+dmin = 99
+objective = 4.0200071500e+03
+Computation Time: 1.52s (0.73s in Terminal)
+3.
+
+t_12_v_4_p_4:
+tt = 3
+dmin = 99
+objective = 4.5181284000e+03
+Computation Time: 12.51s (11.88s in Terminal)
+4.
+
+t_16_v_4_p_4:
+tt = 4
+dmin = 99
+objective = 5.0178772500e+03
+Computation Time: 26.92s ( 30.16s in Terminal)
+
+t_16_v_6_p_4:
+tt = 7
+dmin = 99
+objective =  5.5131493500e+03
+Computation Time: 6.02590799331665s (5.51s in Terminal)
+
+t_16_v_7_p_4:
+tt = 9
+dmin = 99
+objective =  6.0723977000e+03
+Computation Time: 7.87s (6.44s in Terminal)
+6.
+
+t_30_v_2_p_2:
+tt = 3
+dmin = 39
+objective = 3.0456567000e+03
+Computation Time: 71.22s (in Terminal)
+5.
+
+t_30_v_3_p_3_tt_large:
+tt = 9
+dmin = 15
+objective =  4.0795694000e+03
+Computation Time: 23.29s (20.36s in Terminal)
+8.
+
+t_30_v_2_p_2_tt_large:
+tt = 9
+dmin = 10
+objective = 2.5304378000e+03
+Computation Time: 0.97s (0.23 s in Terminal)
+7.
+
+t_20_v_7_p_4:
+tt = 9
+dmin = 99
+objective =  6.5807749500e+03
+Computation Time: 467.89s (in Terminal)
+9.
+
+t_45_v_7_p_4:
+tt = 9
+dmin = 99
+objective >= 6.5531158000e+03
+Computation Time: > 21.4h split: 5.8h + 8.5h + 7.1h
+10.
