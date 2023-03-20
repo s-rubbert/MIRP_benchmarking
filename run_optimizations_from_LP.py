@@ -1,13 +1,14 @@
 import dimod
 import pickle
-from dwave.cloud import Client
+# from dwave.cloud import Client
 # The token data is individual (and therefore non-public). 
 # If you have an import error here, you need to create your own 
 # dwave_token.py file and define the "value" variable as your 
 # dwave token.
-import dwave_token
+# import dwave_token
+from dwave.system import LeapHybridCQMSampler
 
-client = Client(token=dwave_token.value)
+# client = Client(token=dwave_token.value)
 
 file = 'lp_benchmark/t_6_v_1_p_2.lp'
 time_limit = 5
@@ -29,9 +30,10 @@ for label in trivial_constraints:
 print('removed trivial constraints')
 print(f'remaining constraints: {len(model.constraints)}')
 
-sampler = client.get_solver(name='hybrid_constrained_quadratic_model_version1p')
+# sampler = client.get_solver(name='hybrid_constrained_quadratic_model_version1p')
+sampler = LeapHybridCQMSampler()
 sample_set = sampler.sample_cqm(model, time_limit=time_limit)
-sample_set = sample_set.sampleset
+# sample_set = sample_set.sampleset
 
 sample_set = sample_set.to_serializable()
 print('calculation done')
@@ -40,4 +42,4 @@ with open(f"{file.split('.')[0]}+_solution_{time_limit}_s" , 'wb') as f:
     pickle.dump(sample_set, f)
 
 print('all done')
-client.close()
+# client.close()
