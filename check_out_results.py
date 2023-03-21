@@ -2,11 +2,11 @@ import dimod
 import numpy as np
 import pickle
 
-file = 'LR1_1_DR1_3_VC1_V7a_t45_3600sec.mps'
+file = 'lp_benchmark/t_20_v_6_p_4_solution_120_s'
 
-with open(f"Results/{file.split('.')[0]}.txt", 'rb') as f:
+with open(f"{file.split('.')[0]}", 'rb') as f:
     sample_set = pickle.load(f)
-print(f"Results/{file.split('.')[0]}")
+print(f"{file.split('.')[0]}")
 print('')
 
 sample_set = dimod.SampleSet.from_serializable(sample_set)
@@ -16,8 +16,8 @@ print(f"Number samples: {len(sample_set)}")
 sample_set_red = sample_set.filter(lambda d: d.is_feasible)
 print(f'Number feasible samples: {len(sample_set_red)}')
 if len(sample_set_red) > 0:
-    print(f'minimal energy: {sample_set_red.lowest.energy}')
-    print(f'Double check feasibility successful: {sample_set_red.first.is_feasible}')
+    print(f'minimal energy: {sample_set_red.lowest().first.energy}')
+    print(f'Double check feasibility successful: {sample_set_red.lowest().first.is_feasible}')
 else:
     satisfaction_array = np.array([sample.is_satisfied for sample in sample_set.data()])
     n_broken_constraints = np.sum(np.logical_not(satisfaction_array), axis=1)

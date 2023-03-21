@@ -10,8 +10,8 @@ from dwave.system import LeapHybridCQMSampler
 
 # client = Client(token=dwave_token.value)
 
-file = 'lp_benchmark/t_6_v_1_p_2.lp'
-time_limit = 5
+file = 'lp_benchmark/t_20_v_6_p_4.lp'
+time_limit = 120
 #file = 'test.lp'
 
 model = dimod.lp.load(file)
@@ -38,7 +38,7 @@ sample_set = sampler.sample_cqm(model, time_limit=time_limit)
 sample_set = sample_set.to_serializable()
 print('calculation done')
 
-with open(f"{file.split('.')[0]}+_solution_{time_limit}_s" , 'wb') as f:
+with open(f"{file.split('.')[0]}_solution_{time_limit}_s" , 'wb') as f:
     pickle.dump(sample_set, f)
 
 print('all done')
