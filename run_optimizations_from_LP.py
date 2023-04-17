@@ -10,8 +10,8 @@ from dwave.system import LeapHybridCQMSampler
 
 # client = Client(token=dwave_token.value)
 
-file = 'lp_benchmark/t_20_v_6_p_4.lp'
-time_limit = 120
+file = 'lp_benchmark/t_45_v_7_p_4.lp'
+time_limit = 0
 #file = 'test.lp'
 
 model = dimod.lp.load(file)

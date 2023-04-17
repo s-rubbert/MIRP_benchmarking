@@ -2,7 +2,7 @@ import dimod
 import numpy as np
 import pickle
 
-file = 'lp_benchmark/t_20_v_6_p_4_solution_120_s'
+file = 'lp_benchmark/t_45_v_7_p_4_solution_900_s'
 
 with open(f"{file.split('.')[0]}", 'rb') as f:
     sample_set = pickle.load(f)
