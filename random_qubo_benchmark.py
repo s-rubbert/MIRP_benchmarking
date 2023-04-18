@@ -33,8 +33,7 @@ def read_data_file(folder_name, file_name):
 folder = "random_qubo_benchmark"
 files = [file for file in os.listdir(folder) if file[-4:] == ".dat"]
 annealing_time = 1000
-
-print('hello world!')
+num_reads = 100
 
 for counter, file in enumerate(files):
     q_dict = read_data_file(folder, file)
@@ -49,7 +48,7 @@ for counter, file in enumerate(files):
     model = BinaryQuadraticModel(bqm, 'BINARY')
 
     sampler = DWaveCliqueSampler()
-    sample_set = sampler.sample(model, num_reads=1, annealing_time=annealing_time)
+    sample_set = sampler.sample(model, num_reads=num_reads, annealing_time=annealing_time)
 
     print(sample_set.lowest().first.energy)
 
