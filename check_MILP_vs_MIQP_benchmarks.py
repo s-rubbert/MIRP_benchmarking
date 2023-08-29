@@ -3,7 +3,7 @@ import dimod
 import numpy as np
 import pickle
 
-folders = ["LP_files_MILP_vs_MIQP_Benchmark/MILP", "MILP_vs_MIQP_Benchmark/MIQP"]
+folders = ["LP_files_MILP_vs_MIQP_Benchmark/MILP", "LP_files_MILP_vs_MIQP_Benchmark/MIQP"]
 results = {}
 for folder in folders:
     files = [file for file in os.listdir(folder) if "solution" in file] 
