@@ -9,7 +9,7 @@ import os
 import dwave_token
 from dwave.system import LeapHybridCQMSampler
 
-folders = ["MILP_vs_MIQP_Benchmark/MIQP", "MILP_vs_MIQP_Benchmark/MILP"][1:]
+folders = ["LP_files_MILP_vs_MIQP_Benchmark/MIQP", "MILP_vs_MIQP_Benchmark/MILP"][1:]
 n_folders = len(folders)
 
 for folder_counter, folder in enumerate(folders):
