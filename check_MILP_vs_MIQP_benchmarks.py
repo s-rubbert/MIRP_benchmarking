@@ -42,12 +42,12 @@ results = {
     for calculation_time in calculation_times
     }
 
-with open('MILP_vs_MIQP_Benchmark/results', 'wb') as fp:
+with open('LP_files_MILP_vs_MIQP_Benchmark/results', 'wb') as fp:
     pickle.dump(results, fp)
 del results
 
 
-with open('MILP_vs_MIQP_Benchmark/results', 'rb') as fp:
+with open('LP_files_MILP_vs_MIQP_Benchmark/results', 'rb') as fp:
     results = pickle.load(fp)
 
 print(results)
