@@ -1,0 +1,130 @@
+The instances considered here differ by 
+	number of periods (numPeriods), 
+	number of vessels (numVessels), 
+	number of ports (numPorts),
+	travel time between production and consumption port (tt),
+	minimum production and consumption rate (dmin).
+If dmin exceeds the maximum production and consumption rate of a port, then it is set to that maximum production and consumption rate.
+tt is to be understood as only the travel time without loading. Otherwise, the travel time of 1 between consumtion ports would not make sense.
+
+The other parameters are taken from the most simple MIRPLIB instance (see folder LR1_1_DR1_3_VC1_V7a) with the exception of Vessel 2 starting at time 1 instead of 0 (which does not make sense). The standard parameters are
+	numPeriods = 45
+	numVessels = 7
+	number of ports = 4,
+	tt = 9,
+	dmin = 99.
+
+For numVessels below 7, we take away earlier vessels (i.e. starting with 0), since those on average have later starting times.
+For numPorts below 4, we take away the later ports, (i.e. 4, 3...), and always keep at least 2.
+
+In the instances below, dmin is automatically adjusted to garantee that the minumum supply does not exceed the maximum demand, and the maximum turnover volume of the vessels, depending on numVessels, tt (and slightly on numPorts, since the last port can not unload a vessel in one time period)), is in line with minumum demand and supply.
+
+We remind that we have expected revenue activated as a measure against end-of-horizon effects, so the objective values may be a bit higher than usual.
+
+
+LP Files:
+
+T45_V2_P4_tt9_dmin9:
+limit[s]	5.80		10.82		30.81		optimal: 463.25
+objective	4829.28		4829.28		4829.28			4860.70
+reward		2083.96		2083.96		2083.96
+
+T45_V3_P4_tt9_dmin14:
+limit[s]	5.84		10.70		30.81		optimal: >1450
+objective	6593.65		6729.66		6755.76			>= 6968.16
+reward		3125.94		3125.94		3125.94
+
+T45_V4_P4_tt9_dmin19:
+limit[s]	5.77		10.89		30.85		optimal: >820
+objective	6041.82		6041.82		7208.61			>=7849.06
+reward		1041.98		1041.98		1041.98
+
+T45_V6_P2_tt9_dmin39:
+limit[s]	5.85		10.99		30.85		optimal: >650
+objective	9608.07		9608.07		9608.07			>=9608.07
+reward		6181.61		5747.15		5747.15
+
+T45_V7_P3_tt9_dmin73:
+limit[s]	5.79		10.96		30.88		optimal: >850
+objective	12368.17	12368.17	12875.08		>=13428.80
+reward		5321.79		5321.79		4257.43
+
+T15_V5_P4_tt5_dmin99:
+limit[s]	5.68		10.72		30.88		optimal:  39.53
+objective	7204.76		7204.76		7204.76			7204.76
+reward		3125.94		3125.94		3125.94
+
+T20_V5_P4_tt5_dmin99:
+limit[s]	5.84		10.85		30.72		optimal: >700
+objective	7679.8		7679.8		7777.97			>=7850.90
+reward		3125.94		3125.94		3125.94
+
+T25_V5_P4_tt5_dmin99:
+limit[s]	5.78		10.72		30.87		optimal: >830
+objective	7602.44		8603.79		8603.79			>=9020.87
+reward		2083.96		3125.94		3125.94
+
+T30_V5_P4_tt5_dmin99:
+limit[s]	5		10.83		30.76		optimal: >700
+objective	-		8279.83		9387.13			>= 9970.80
+reward				1041.98		2083.96
+
+T35_V3_P4_tt5_dmin23:
+limit[s]	5		10		30.79		optimal: >790
+objective	-		-		6321.59			>=6931.18
+reward						1041.98
+
+T30_V3_P4_tt5_dmin23:
+limit[s]	5.81		10.85		30.78		optimal: >1300
+objective	6968.16		6394.0		6968.16			>=6992.36
+reward		3125.94		2083.96		3125.94
+
+T25_V3_P4_tt5_dmin23:
+limit[s]	5.79		10.73		30.85		optimal: >600
+objective	5651.8		5651.8		5802.02			>=6245.52
+reward		2083.96		2083.96		1041.98
+
+T20_V3_P4_tt5_dmin23:
+limit[s]	5.82		10.8		30.75		optimal: 118.16
+objective	5224.02		5227.66		5227.66			5227.66
+reward		1041.98		1041.98		1041.98
+
+T20_V3_P4_tt4_dmin29:
+limit[s]	5.71		10.79		30.88		optimal: 80.41
+objective	5716.42		5716.42		5817.74			5817.74
+reward		3125.94		3125.94		1041.98
+
+T20_V3_P4_tt3_dmin85: (dmin adjusted manually)
+limit[s]	5.83		10.25		9.68		optimal: 9.30
+objective	6388.26		6942.05		6942.05			6942.05
+reward		2083.96		3125.94		3125.94
+
+T20_V3_P4_tt2_dmin99:
+limit[s]	5.71		10.77		30.8		optimal: >650
+objective	6966.25		6966.25		6986.62			>=7015.93
+reward		2083.96		2083.96		2083.96
+
+T45_V1_P2_tt5_dmin23:
+limit[s]	1.64		1.58		1.34		optimal: 0.48
+objective	3267.23		3267.23		3267.23			3267.23
+reward		1497.0		1497.0		1497.0
+
+T45_V1_P3_tt4_dmin13:
+limit[s]	5.81		10.68		30.79		optimal: 30.55
+objective	3877.51		3877.51		3877.51			3877.51
+reward		0		0		0
+
+T45_V1_P4_tt4_dmin9:
+limit[s]	5.82		10.98		30.83		optimal: 49.45
+objective	3711.58		3773.66		3797.68			 3813.60
+reward		1041.98		1041.98		1041.98
+
+T30_V2_P4_tt4_dmin18:
+limit[s]	5.81		10.78		30.77		optimal: 220.63
+objective	5348.0		5348.0		5348.0			5390.02
+reward		2083.96		2083.96		2083.96
+
+T45_V7_P4_tt9_dmin99:
+limit[s]	5		10		30		optimal: >8500
+objective	-		-		-
+reward
