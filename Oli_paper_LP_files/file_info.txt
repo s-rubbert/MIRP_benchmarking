@@ -24,107 +24,117 @@ We remind that we have expected revenue activated as a measure against end-of-ho
 
 LP Files:
 
-T45_V2_P4_tt9_dmin9:
-limit[s]	5.80		10.82		30.81		optimal: 463.25
-objective	4829.28		4829.28		4829.28			4860.70
+T45_V2_P3_tt9_dmin14:									Dwave 5		Dwave 10
+limit[s]	5.81		10.8		30.78		optimal: 131.69
+objective	3877.51		4941.87		4941.87			4941.87
+reward		0		1064.36		1064.36
+
+T45_V3_P3_tt9_dmin21: 									Dwave 5		Dwave 10
+limit[s]	5.82		10.83		30.93		optimal:>600 (149%)
+objective	5880.31		5880.31		5882.13			>=7077.03
+reward		1064.36		1064.36		0.0
+
+T45_V4_P3_tt9_dmin28:									Dwave 5		Dwave 10
+limit[s]	5.91		10.74		30.76		optimal:>640 (129%)
+objective	7584.66		7584.66		8183.02			>=8695.28
+reward		3193.08		3193.08		3193.08
+
+T45_V5_P3_tt9_dmin35: (dmin adjusted manually)						Dwave 5		Dwave 10
+limit[s]	5		10.91		30.82		optimal:>690 (107%)
+objective	-		8939.55		8964.01			>=10232.08
+reward				2128.72		2128.72
+
+T45_V5_P2_tt9_dmin39:									Dwave 5		Dwave 10
+limit[s]	5.76		10.79		30.82		optimal:>860 (53%)
+objective	8428.13		8428.13		8526.53			>=8583.53
+reward		4684.61		4684.61		4250.15
+
+T45_V4_P2_tt9_dmin39:									Dwave 5		Dwave 10
+limit[s]	5.94		10.82		30.9		optimal:>710 (45%)
+objective	7501.99		7501.99		7558.99			>=7558.99
+reward		3622.08		3622.08		3622.08
+
+T45_V3_P2_tt9_dmin39:									Dwave 5		Dwave 10
+limit[s]	5.78		10.96		30.84		optimal: 27.50
+objective	6316.89		6347.91		6534.45			6534.45
+reward		2559.54		2125.08		2125.08
+
+T15_V4_P4_tt5_dmin34:									Dwave 5		Dwave 10
+limit[s]	5.13		5.02		4.59		optimal: 3.20
+objective	5617.84		5617.84		5617.84			5617.84
 reward		2083.96		2083.96		2083.96
 
-T45_V3_P4_tt9_dmin14:
-limit[s]	5.84		10.70		30.81		optimal: >1450
-objective	6593.65		6729.66		6755.76			>= 6968.16
+T18_V4_P4_tt5_dmin34:									Dwave 5		Dwave 10
+limit[s]	5.88		10.89		30.76		optimal: 26.83
+objective	6615.52		6779.7		6779.70			6779.70
+reward		4167.92		3125.94		3125.94
+
+T21_V4_P4_tt5_dmin34:									Dwave 5		Dwave 10
+limit[s]	5.72		10.94		30.98		optimal: 800.83
+objective	6616.7		6616.7		6638.25			6800.26
+reward		2083.96		2083.96		3125.94
+
+T24_V4_P4_tt5_dmin34:									Dwave 5		Dwave 10
+limit[s]	5.9		10.89		30.98		optimal:>760 (56%)
+objective	6549.97		6549.97		6638.25			>=7247.20
+reward		2083.96		2083.96		3125.94
+
+T27_V4_P4_tt5_dmin34:									Dwave 5		Dwave 10
+limit[s]	5		10		30.84		optimal:>620 (81%)
+objective	-		-		7400.67			>=7846.96
+reward						2083.96
+
+T16_V3_P4_tt5_dmin23:									Dwave 5		Dwave 10
+limit[s]	1.46		1.47		1.46		optimal: 0.95
+objective	5269.48		5269.48		5269.48			5269.48
+reward		2083.96		2083.96		2083.96
+
+T16_V3_P4_tt4_dmin29:									Dwave 5		Dwave 10
+limit[s]	5.75		8.61		8.04		optimal: 8.22
+objective	5269.48		5269.48		5269.48			5269.48
+reward		2083.96		2083.96		2083.96
+
+T16_V3_P4_tt3_dmin80: (dmin adjusted manually)						Dwave 5		Dwave 10
+limit[s]	2.21		2.02		1.99		optimal: 3.72
+objective	5859.55		5859.55		5859.55			5859.55
+reward		2083.96		2083.96		2083.96
+
+T16_V3_P4_tt2_dmin99:									Dwave 5		Dwave 10
+limit[s]	5.72		10.82		30.9		optimal: 184.80
+objective	6417.98		6433.71		6433.71			6433.71
 reward		3125.94		3125.94		3125.94
 
-T45_V4_P4_tt9_dmin19:
-limit[s]	5.77		10.89		30.85		optimal: >820
-objective	6041.82		6041.82		7208.61			>=7849.06
+T16_V3_P4_tt1_dmin99:									Dwave 5		Dwave 10
+limit[s]	5.83		10.93		30.81		optimal:>710 (48%)
+objective	6365.78		6418.37		6433.71			>=6433.71
+reward		2083.96		3545.47		3125.94
+
+T45_V1_P2_tt4_dmin27:									Dwave 5		Dwave 10
+limit[s]	1.23		1.46		1.59		optimal: 0.64
+objective	3857.30		3857.30		3857.30			3857.30
+reward		1062.54		1062.54		1062.54
+
+T45_V1_P3_tt4_dmin13:									Dwave 5		Dwave 10
+limit[s]	5.78		10.82		30.92		optimal: 31.98
+objective	3877.51		3877.51		3877.51			3877.51
+reward		0.0		0.0		0.0
+
+T45_V1_P4_tt4_dmin9:									Dwave 5		Dwave 10
+limit[s]	5.86		10.87		30.84		optimal: 58.59
+objective	3711.58		3711.58		3797.68			3813.60
 reward		1041.98		1041.98		1041.98
 
-T45_V6_P2_tt9_dmin39:
-limit[s]	5.85		10.99		30.85		optimal: >650
-objective	9608.07		9608.07		9608.07			>=9608.07
-reward		6181.61		5747.15		5747.15
-
-T45_V7_P3_tt9_dmin73:
-limit[s]	5.79		10.96		30.88		optimal: >850
-objective	12368.17	12368.17	12875.08		>=13428.80
-reward		5321.79		5321.79		4257.43
-
-T15_V5_P4_tt5_dmin99:
-limit[s]	5.68		10.72		30.88		optimal:  39.53
-objective	7204.76		7204.76		7204.76			7204.76
-reward		3125.94		3125.94		3125.94
-
-T20_V5_P4_tt5_dmin99:
-limit[s]	5.84		10.85		30.72		optimal: >700
-objective	7679.8		7679.8		7777.97			>=7850.90
-reward		3125.94		3125.94		3125.94
-
-T25_V5_P4_tt5_dmin99:
-limit[s]	5.78		10.72		30.87		optimal: >830
-objective	7602.44		8603.79		8603.79			>=9020.87
-reward		2083.96		3125.94		3125.94
-
-T30_V5_P4_tt5_dmin99:
-limit[s]	5		10.83		30.76		optimal: >700
-objective	-		8279.83		9387.13			>= 9970.80
-reward				1041.98		2083.96
-
-T35_V3_P4_tt5_dmin23:
-limit[s]	5		10		30.79		optimal: >790
-objective	-		-		6321.59			>=6931.18
-reward						1041.98
-
-T30_V3_P4_tt5_dmin23:
-limit[s]	5.81		10.85		30.78		optimal: >1300
-objective	6968.16		6394.0		6968.16			>=6992.36
-reward		3125.94		2083.96		3125.94
-
-T25_V3_P4_tt5_dmin23:
-limit[s]	5.79		10.73		30.85		optimal: >600
-objective	5651.8		5651.8		5802.02			>=6245.52
+T25_V2_P4_tt4_dmin18:									Dwave 5		Dwave 10
+limit[s]	5.79		10.87		30.86		optimal: 38.38
+objective	4821.28		4831.38		4860.22			4860.22
 reward		2083.96		2083.96		1041.98
 
-T20_V3_P4_tt5_dmin23:
-limit[s]	5.82		10.8		30.75		optimal: 118.16
-objective	5224.02		5227.66		5227.66			5227.66
-reward		1041.98		1041.98		1041.98
+T25_V3_P4_tt4_dmin29:									Dwave 5		Dwave 10
+limit[s]	5.95		10.89		30.81		optimal: 828.91
+objective	5817.74		6394.0		6968.16			6992.36
+reward		1041.98		2083.96		3125.94
 
-T20_V3_P4_tt4_dmin29:
-limit[s]	5.71		10.79		30.88		optimal: 80.41
-objective	5716.42		5716.42		5817.74			5817.74
-reward		3125.94		3125.94		1041.98
-
-T20_V3_P4_tt3_dmin85: (dmin adjusted manually)
-limit[s]	5.83		10.25		9.68		optimal: 9.30
-objective	6388.26		6942.05		6942.05			6942.05
-reward		2083.96		3125.94		3125.94
-
-T20_V3_P4_tt2_dmin99:
-limit[s]	5.71		10.77		30.8		optimal: >650
-objective	6966.25		6966.25		6986.62			>=7015.93
-reward		2083.96		2083.96		2083.96
-
-T45_V1_P2_tt5_dmin23:
-limit[s]	1.64		1.58		1.34		optimal: 0.48
-objective	3267.23		3267.23		3267.23			3267.23
-reward		1497.0		1497.0		1497.0
-
-T45_V1_P3_tt4_dmin13:
-limit[s]	5.81		10.68		30.79		optimal: 30.55
-objective	3877.51		3877.51		3877.51			3877.51
-reward		0		0		0
-
-T45_V1_P4_tt4_dmin9:
-limit[s]	5.82		10.98		30.83		optimal: 49.45
-objective	3711.58		3773.66		3797.68			 3813.60
-reward		1041.98		1041.98		1041.98
-
-T30_V2_P4_tt4_dmin18:
-limit[s]	5.81		10.78		30.77		optimal: 220.63
-objective	5348.0		5348.0		5348.0			5390.02
-reward		2083.96		2083.96		2083.96
-
-T45_V7_P4_tt9_dmin99:
-limit[s]	5		10		30		optimal: >8500
-objective	-		-		-
+T45_V7_P4_tt9_dmin99:									Dwave 5		Dwave 10
+limit[s]	5		10		30		optimal: >40000
+objective	-		-		-			-		-		-
 reward
