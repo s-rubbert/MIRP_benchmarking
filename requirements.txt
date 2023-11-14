@@ -1,5 +1,5 @@
 numpy
-dimod[all]
 pickle
 os
-dwave-ocean-sdk
+dimod==0.10.0
+dwave-system==1.8.6
