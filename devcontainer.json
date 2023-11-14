@@ -1,0 +1,14 @@
+{
+  "name": "Hellooooo! I am Moaaartin.",
+  "build": {
+    "dockerfile": "Dockerfile",
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+  },
+  "extensions": [
+    "visualstudioexptteam.vscodeintellicode",
+    "ms-python.python",
+  ],
+  "postCreateCommand": "pip install -r requirements.txt",
+}
