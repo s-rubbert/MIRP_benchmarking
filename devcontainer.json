@@ -10,5 +10,5 @@
     "visualstudioexptteam.vscodeintellicode",
     "ms-python.python",
   ],
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "pip install -r requirements.txt && pip install dwave-system && pip install dimod",
 }
