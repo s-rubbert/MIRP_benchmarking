@@ -1,5 +1,5 @@
 numpy
-dimod
+dimod[all]
 pickle
 os
-dwave
+dwave-ocean-sdk
