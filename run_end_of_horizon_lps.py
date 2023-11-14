@@ -13,12 +13,13 @@ from dwave.system import LeapHybridCQMSampler
 folders = ["Oli_paper_LP_files",]
 n_folders = len(folders)
 
+sampler = LeapHybridCQMSampler(token=dwave_token.value)
+
 for folder_counter, folder in enumerate(folders):
     files = [file for file in os.listdir(folder) if file[-3:] == ".lp"]
     n_files = len(files)
-    time_limit = 10
-    sampler = LeapHybridCQMSampler()
-
+    time_limit = 5
+    
     for file_counter, file in enumerate(files):
         print(f'loading file {file_counter+1} of {n_files} in folder {folder_counter+1} of {n_folders}:')
         model = dimod.lp.load(folder + "/" + file)
@@ -27,7 +28,7 @@ for folder_counter, folder in enumerate(folders):
                 model.set_upper_bound(variable, 1e10)
 
         print(f'-> calculating')
-        sampler = LeapHybridCQMSampler()
+        
         print(file)
         # sample_set = sampler.sample_cqm(model, time_limit=time_limit)
         # # sample_set = sample_set.sampleset
