@@ -1,0 +1,5 @@
+numpy
+dimod
+pickle
+os
+dwave
